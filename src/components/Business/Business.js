@@ -1,5 +1,5 @@
 import React from 'react';
-import ' ./Business.css';
+import './Business.css';
 
 let business = {
   imageSrc: 'https://s3.amazonaws.com/codecademy-content/programs/react/ravenous/pizza.jpg',
@@ -15,8 +15,7 @@ let business = {
 
 class Business extends React.Component {
   render() {
-  	return 
-  ( 
+  	return (
   <div className="Business">
   <div className="image-container">
   <img src='https://s3.amazonaws.com/codecademy-content/programs/react/ravenous/pizza.jpg' alt=''/>
@@ -26,7 +25,7 @@ class Business extends React.Component {
   <div className="Business-address">
       <p>{this.props.business.address}</p>
       <p>{this.props.business.city}</p>
-      <p>{this.props.business.state {this.props.business.zipCode}}</p>
+      <p>{this.props.business.state} {this.props.business.zipCode}</p>
   </div>
   <div className="Business-reviews">
         <h3>{this.props.business.category}</h3>
@@ -35,7 +34,8 @@ class Business extends React.Component {
   </div>
   </div>
   </div>
-  )
-  }
+  
+) 
+}
 }
 export default Business;
