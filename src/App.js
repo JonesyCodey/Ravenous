@@ -17,7 +17,7 @@ let business = {
 }
 
 const businesses = [
-business, business, buisness, buisness, buisness, buisness];
+business, business, business, business, business, business];
 
 class App extends React.Component {
   render() {
@@ -25,7 +25,7 @@ class App extends React.Component {
   <div className="App">
     <h1>ravenous</h1>
     <SearchBar />
-    <BusinessList businesses={business}/> 
+    <BusinessList businesses={businesses}/> 
   </div>
   )
   }
