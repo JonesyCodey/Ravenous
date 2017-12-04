@@ -25,6 +25,12 @@ this.setState({sortBy: sortByOption});
 handleTermChange(event){this.setState({term:event.target.value});}
 
 handleLocationChange(event){this.setState({location:event.target.value});}
+
+handleSearch(event) {
+      this.props.searchYelp(this.state.term, this.state.location, this.state.sortBy)
+      event.preventDefault()
+      }
+
   constructor(props){
     super(props);
     this.state = {
@@ -34,6 +40,9 @@ handleLocationChange(event){this.setState({location:event.target.value});}
     };
     this.handleTermChange = this.handleTermChange.bind(this);
     this.handleLocationChange = this.handleLocationChange.bind(this);
+    this.handleSearch = this.handleSearch.bind(this);
+   
+    }
   }
 
     
@@ -41,12 +50,12 @@ handleLocationChange(event){this.setState({location:event.target.value});}
     return Object.keys(sortByOptions).map(sortByOption => {
       let sortByOptionValue = sortByOptions[sortByOption];
 
-      return <li 
+      return (<li 
       key={sortByOptionValue} 
       className={this.getsortByClass(sortByOptionValue)}
-      onClick={this.handleSortByChange.bind(this, sortByOptionValue)}>{sortByOption}</li>;
+      onClick={this.handleSortByChange.bind(this, sortByOptionValue)}>{sortByOption}</li>);
     });
-        }
+    }
   
 
 
@@ -62,7 +71,7 @@ render(){
     <input onChange={this.handleTermChange} placeholder="Search Businesses"/>
     <input onChange={this.handleLocationChange} placeholder="Where?"/>
   </div>
-  <div class="SearchBar-submit">
+  <div class="SearchBar-submit" onClick-{this.handleSearch}>
     <a>Let's Go</a>
   </div>
 </div>
