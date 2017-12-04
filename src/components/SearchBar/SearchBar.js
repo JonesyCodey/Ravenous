@@ -44,7 +44,12 @@ handleSearch(event) {
    
     }
   
-
+getsortByClass(sortByOption) {
+    if (this.state.sortBy === sortByOption) {
+      return 'active';
+    }
+    return '';
+  }
     
   renderSortByOptions(){ 
     return Object.keys(sortByOptions).map(sortByOption => {
@@ -71,7 +76,7 @@ render(){
     <input onChange={this.handleTermChange} placeholder="Search Businesses"/>
     <input onChange={this.handleLocationChange} placeholder="Where?"/>
   </div>
-  <div class="SearchBar-submit" onClick={this.handleSearch}>
+  <div className="SearchBar-submit" onClick={this.handleSearch}>
     <a>Let's Go</a>
   </div>
 </div>
