@@ -43,7 +43,7 @@ handleSearch(event) {
     this.handleSearch = this.handleSearch.bind(this);
    
     }
-  }
+  
 
     
   renderSortByOptions(){ 
@@ -64,19 +64,18 @@ render(){
 <div className="SearchBar">
   <div className="SearchBar-sort-options">
     <ul>
-      {/* Use .renderSortByOptions() to sort the businesses by their options */}
+      {this.renderSortByOptions()}
     </ul>
   </div>
   <div className="SearchBar-fields">
     <input onChange={this.handleTermChange} placeholder="Search Businesses"/>
     <input onChange={this.handleLocationChange} placeholder="Where?"/>
   </div>
-  <div class="SearchBar-submit" onClick-{this.handleSearch}>
+  <div class="SearchBar-submit" onClick={this.handleSearch}>
     <a>Let's Go</a>
   </div>
 </div>
   );
 }
 }
-
 export default SearchBar;
