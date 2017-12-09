@@ -22,6 +22,7 @@ search(term,location,sortBy){
 					}).then(response=> {
 						return response.json();
 					}).then(jsonResponse => {
+						console.log("jsonResponse", jsonResponse);
 					if(jsonResponse.businesses){
 						console.log("jsonResponse.businesses", jsonResponse.businesses);
 						return jsonResponse.businesses.map(business => ({
