@@ -3,26 +3,29 @@ import logo from './logo.svg';
 import './App.css';
 import BusinessList from './components/BusinessList/BusinessList';
 import SearchBar from './components/SearchBar/SearchBar';
-import Yelp from './util/Yelp.js'
+import Yelp from './util/Yelp.js';
+
+
 
 
 class App extends React.Component {
-  constructor(props){
-    super(props)
+  constructor(props) {
+    super(props);
     
-    this.state = {businesses:[]
+    this.state = {
+      businesses:[]
     };
 
-    this.searchYelp = this.searchYelp.bind(this)
+    this.searchYelp = this.searchYelp.bind(this);
   }
-  searchYelp(term,location,sortBy){
-    return Yelp.search(term, location,sortBy).then(businesess =>{
-      this.setState({businesses:businesses});
+
+searchYelp(term,location,sortBy) {
+    Yelp.search(term, location,sortBy).then(businesses => {
+      this.setState({businesses: businesses});
     });
   }
 
-
-  render() {
+render() {
     return (
   <div className="App">
     <h1>ravenous</h1>
