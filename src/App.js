@@ -23,8 +23,9 @@ searchYelp(term,location,sortBy) {
   console.log("term,location,sortBy", term, location, sortBy);
   
     Yelp.search(term, location,sortBy).then(businesses => {
-      console.log("businesses", businesses);
+      
       this.setState({businesses: businesses});
+      console.log("businesses", this.state.businesses);
     });
   }
 

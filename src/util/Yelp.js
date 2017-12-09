@@ -26,6 +26,8 @@ search(term,location,sortBy){
                         Authorization: `Bearer ${accessToken}`
                     }
                      });
+                    }).then(response=> {
+                        return response.json();
                     }).then(jsonResponse => {
                         console.log("jsonResponse", jsonResponse);
                     if(jsonResponse.businesses){
